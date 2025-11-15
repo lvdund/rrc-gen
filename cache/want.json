@@ -1,0 +1,122 @@
+{
+  "SPS-Config": {
+    "name": "SPS-Config",
+    "type_name": "SEQUENCE",
+    "fields": [
+      {
+        "name": "periodicity",
+        "type_name": "SPS-Config-periodicity",
+        "optional": false,
+        "ext": false,
+        "comment": ""
+      },
+      {
+        "name": "nrofHARQ-Processes",
+        "type_name": "INTEGER",
+        "lb": "1",
+        "ub": "8",
+        "optional": false,
+        "ext": false,
+        "comment": ""
+      },
+      {
+        "name": "n1PUCCH-AN",
+        "type_name": "PUCCH-ResourceId",
+        "optional": true,
+        "ext": false,
+        "comment": ""
+      },
+      {
+        "name": "mcs-Table",
+        "type_name": "SPS-Config-mcs-Table",
+        "optional": true,
+        "ext": false,
+        "comment": ""
+      },
+      {
+        "name": "sps-ConfigIndex-r16",
+        "type_name": "SPS-ConfigIndex-r16",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-1"
+      },
+      {
+        "name": "harq-ProcID-Offset-r16",
+        "type_name": "INTEGER",
+        "lb": "0",
+        "ub": "15",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-1"
+      },
+      {
+        "name": "periodicityExt-r16",
+        "type_name": "INTEGER",
+        "lb": "1",
+        "ub": "5120",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-1"
+      },
+      {
+        "name": "harq-CodebookID-r16",
+        "type_name": "INTEGER",
+        "lb": "1",
+        "ub": "2",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-1"
+      },
+      {
+        "name": "pdsch-AggregationFactor-r16",
+        "type_name": "SPS-Config-pdsch-AggregationFactor-r16",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-1"
+      },
+      {
+        "name": "sps-HARQ-Deferral-r17",
+        "type_name": "INTEGER",
+        "lb": "1",
+        "ub": "32",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-2"
+      },
+      {
+        "name": "n1PUCCH-AN-PUCCHsSCell-r17",
+        "type_name": "PUCCH-ResourceId",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-2"
+      },
+      {
+        "name": "periodicityExt-r17",
+        "type_name": "INTEGER",
+        "lb": "1",
+        "ub": "40960",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-2"
+      },
+      {
+        "name": "nrofHARQ-Processes-v1710",
+        "type_name": "INTEGER",
+        "lb": "9",
+        "ub": "32",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-2"
+      },
+      {
+        "name": "harq-ProcID-Offset-v1700",
+        "type_name": "INTEGER",
+        "lb": "16",
+        "ub": "31",
+        "optional": true,
+        "ext": true,
+        "comment": "ext-2"
+      }
+    ]
+  }
+}

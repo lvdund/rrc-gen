@@ -1,0 +1,22 @@
+{
+  "MeasurementTimingConfiguration-v1610-IEs": {
+    "name": "MeasurementTimingConfiguration-v1610-IEs",
+    "type_name": "SEQUENCE",
+    "fields": [
+      {
+        "name": "csi-RS-Config-r16",
+        "type_name": "MeasurementTimingConfiguration-v1610-IEs-csi-RS-Config-r16",
+        "optional": false,
+        "ext": false,
+        "comment": ""
+      },
+      {
+        "name": "nonCriticalExtension",
+        "type_name": "Struct-Null",
+        "optional": true,
+        "ext": false,
+        "comment": ""
+      }
+    ]
+  }
+}
