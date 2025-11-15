@@ -1,0 +1,34 @@
+package ies
+
+import (
+	"github.com/lvdund/asn1go/uper"
+	"github.com/lvdund/rrc/utils"
+)
+
+const (
+	FeatureSetUplink_scalingFactor_Enum_f0p4  uper.Enumerated = 0
+	FeatureSetUplink_scalingFactor_Enum_f0p75 uper.Enumerated = 1
+	FeatureSetUplink_scalingFactor_Enum_f0p8  uper.Enumerated = 2
+)
+
+type FeatureSetUplink_scalingFactor struct {
+	Value uper.Enumerated `lb:0,ub:2,madatory`
+}
+
+func (ie *FeatureSetUplink_scalingFactor) Encode(w *uper.UperWriter) error {
+	var err error
+	if err = w.WriteEnumerate(uint64(ie.Value), uper.Constraint{Lb: 0, Ub: 2}, false); err != nil {
+		return utils.WrapError("Encode FeatureSetUplink_scalingFactor", err)
+	}
+	return nil
+}
+
+func (ie *FeatureSetUplink_scalingFactor) Decode(r *uper.UperReader) error {
+	var err error
+	var v uint64
+	if v, err = r.ReadEnumerate(uper.Constraint{Lb: 0, Ub: 2}, false); err != nil {
+		return utils.WrapError("Decode FeatureSetUplink_scalingFactor", err)
+	}
+	ie.Value = uper.Enumerated(v)
+	return nil
+}

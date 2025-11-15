@@ -1,0 +1,37 @@
+package ies
+
+import (
+	"github.com/lvdund/asn1go/uper"
+	"github.com/lvdund/rrc/utils"
+)
+
+const (
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n50  uper.Enumerated = 0
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n60  uper.Enumerated = 1
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n70  uper.Enumerated = 2
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n80  uper.Enumerated = 3
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n90  uper.Enumerated = 4
+	CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17_Enum_n100 uper.Enumerated = 5
+)
+
+type CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17 struct {
+	Value uper.Enumerated `lb:0,ub:5,madatory`
+}
+
+func (ie *CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17) Encode(w *uper.UperWriter) error {
+	var err error
+	if err = w.WriteEnumerate(uint64(ie.Value), uper.Constraint{Lb: 0, Ub: 5}, false); err != nil {
+		return utils.WrapError("Encode CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17", err)
+	}
+	return nil
+}
+
+func (ie *CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17) Decode(r *uper.UperReader) error {
+	var err error
+	var v uint64
+	if v, err = r.ReadEnumerate(uper.Constraint{Lb: 0, Ub: 5}, false); err != nil {
+		return utils.WrapError("Decode CA_ParametersNR_v1700_maxUplinkDutyCycle_interBandCA_PC2_r17", err)
+	}
+	ie.Value = uper.Enumerated(v)
+	return nil
+}

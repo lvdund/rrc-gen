@@ -1,0 +1,8 @@
+---
+alwaysApply: false
+---
+# This is the project about implemention of RRC interface in golang from asn1 by auto-gen in file [gen.py](./../../gen.py)
+
+# Mean:
+* use python to gen all struct from asn1 file [lte-rrc-16.13.0.asn1](../../lte-rrc-16.13.0.asn1)
+* there are many complex cases then you need read [example-of-some-complex-case](./example-of-some-complex-case.mdc)

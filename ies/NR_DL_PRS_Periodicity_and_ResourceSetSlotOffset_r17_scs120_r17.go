@@ -1,0 +1,244 @@
+package ies
+
+import (
+	"fmt"
+
+	"github.com/lvdund/asn1go/uper"
+	"github.com/lvdund/rrc/utils"
+)
+
+const (
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_nothing uint64 = iota
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n32_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n64_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n80_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n128_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n160_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n256_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n320_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n512_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n640_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n1280_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n2560_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n5120_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n10240_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n20480_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40960_r17
+	NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n81920_r17
+)
+
+type NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17 struct {
+	Choice     uint64
+	n32_r17    int64 `lb:0,ub:31,madatory`
+	n40_r17    int64 `lb:0,ub:39,madatory`
+	n64_r17    int64 `lb:0,ub:63,madatory`
+	n80_r17    int64 `lb:0,ub:79,madatory`
+	n128_r17   int64 `lb:0,ub:127,madatory`
+	n160_r17   int64 `lb:0,ub:159,madatory`
+	n256_r17   int64 `lb:0,ub:255,madatory`
+	n320_r17   int64 `lb:0,ub:319,madatory`
+	n512_r17   int64 `lb:0,ub:511,madatory`
+	n640_r17   int64 `lb:0,ub:639,madatory`
+	n1280_r17  int64 `lb:0,ub:1279,madatory`
+	n2560_r17  int64 `lb:0,ub:2559,madatory`
+	n5120_r17  int64 `lb:0,ub:5119,madatory`
+	n10240_r17 int64 `lb:0,ub:10239,madatory`
+	n20480_r17 int64 `lb:0,ub:20479,madatory`
+	n40960_r17 int64 `lb:0,ub:40959,madatory`
+	n81920_r17 int64 `lb:0,ub:81919,madatory`
+}
+
+func (ie *NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17) Encode(w *uper.UperWriter) error {
+	var err error
+	if err = w.WriteChoice(ie.Choice, 17, false); err != nil {
+		return err
+	}
+	switch ie.Choice {
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n32_r17:
+		if err = w.WriteInteger(int64(ie.n32_r17), &uper.Constraint{Lb: 0, Ub: 31}, false); err != nil {
+			err = utils.WrapError("Encode n32_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40_r17:
+		if err = w.WriteInteger(int64(ie.n40_r17), &uper.Constraint{Lb: 0, Ub: 39}, false); err != nil {
+			err = utils.WrapError("Encode n40_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n64_r17:
+		if err = w.WriteInteger(int64(ie.n64_r17), &uper.Constraint{Lb: 0, Ub: 63}, false); err != nil {
+			err = utils.WrapError("Encode n64_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n80_r17:
+		if err = w.WriteInteger(int64(ie.n80_r17), &uper.Constraint{Lb: 0, Ub: 79}, false); err != nil {
+			err = utils.WrapError("Encode n80_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n128_r17:
+		if err = w.WriteInteger(int64(ie.n128_r17), &uper.Constraint{Lb: 0, Ub: 127}, false); err != nil {
+			err = utils.WrapError("Encode n128_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n160_r17:
+		if err = w.WriteInteger(int64(ie.n160_r17), &uper.Constraint{Lb: 0, Ub: 159}, false); err != nil {
+			err = utils.WrapError("Encode n160_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n256_r17:
+		if err = w.WriteInteger(int64(ie.n256_r17), &uper.Constraint{Lb: 0, Ub: 255}, false); err != nil {
+			err = utils.WrapError("Encode n256_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n320_r17:
+		if err = w.WriteInteger(int64(ie.n320_r17), &uper.Constraint{Lb: 0, Ub: 319}, false); err != nil {
+			err = utils.WrapError("Encode n320_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n512_r17:
+		if err = w.WriteInteger(int64(ie.n512_r17), &uper.Constraint{Lb: 0, Ub: 511}, false); err != nil {
+			err = utils.WrapError("Encode n512_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n640_r17:
+		if err = w.WriteInteger(int64(ie.n640_r17), &uper.Constraint{Lb: 0, Ub: 639}, false); err != nil {
+			err = utils.WrapError("Encode n640_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n1280_r17:
+		if err = w.WriteInteger(int64(ie.n1280_r17), &uper.Constraint{Lb: 0, Ub: 1279}, false); err != nil {
+			err = utils.WrapError("Encode n1280_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n2560_r17:
+		if err = w.WriteInteger(int64(ie.n2560_r17), &uper.Constraint{Lb: 0, Ub: 2559}, false); err != nil {
+			err = utils.WrapError("Encode n2560_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n5120_r17:
+		if err = w.WriteInteger(int64(ie.n5120_r17), &uper.Constraint{Lb: 0, Ub: 5119}, false); err != nil {
+			err = utils.WrapError("Encode n5120_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n10240_r17:
+		if err = w.WriteInteger(int64(ie.n10240_r17), &uper.Constraint{Lb: 0, Ub: 10239}, false); err != nil {
+			err = utils.WrapError("Encode n10240_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n20480_r17:
+		if err = w.WriteInteger(int64(ie.n20480_r17), &uper.Constraint{Lb: 0, Ub: 20479}, false); err != nil {
+			err = utils.WrapError("Encode n20480_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40960_r17:
+		if err = w.WriteInteger(int64(ie.n40960_r17), &uper.Constraint{Lb: 0, Ub: 40959}, false); err != nil {
+			err = utils.WrapError("Encode n40960_r17", err)
+		}
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n81920_r17:
+		if err = w.WriteInteger(int64(ie.n81920_r17), &uper.Constraint{Lb: 0, Ub: 81919}, false); err != nil {
+			err = utils.WrapError("Encode n81920_r17", err)
+		}
+	default:
+		err = fmt.Errorf("invalid choice: %d", ie.Choice)
+	}
+	return err
+}
+
+func (ie *NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17) Decode(r *uper.UperReader) error {
+	var err error
+	if ie.Choice, err = r.ReadChoice(17, false); err != nil {
+		return err
+	}
+	switch ie.Choice {
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n32_r17:
+		var tmp_int_n32_r17 int64
+		if tmp_int_n32_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 31}, false); err != nil {
+			return utils.WrapError("Decode n32_r17", err)
+		}
+		ie.n32_r17 = tmp_int_n32_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40_r17:
+		var tmp_int_n40_r17 int64
+		if tmp_int_n40_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 39}, false); err != nil {
+			return utils.WrapError("Decode n40_r17", err)
+		}
+		ie.n40_r17 = tmp_int_n40_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n64_r17:
+		var tmp_int_n64_r17 int64
+		if tmp_int_n64_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 63}, false); err != nil {
+			return utils.WrapError("Decode n64_r17", err)
+		}
+		ie.n64_r17 = tmp_int_n64_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n80_r17:
+		var tmp_int_n80_r17 int64
+		if tmp_int_n80_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 79}, false); err != nil {
+			return utils.WrapError("Decode n80_r17", err)
+		}
+		ie.n80_r17 = tmp_int_n80_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n128_r17:
+		var tmp_int_n128_r17 int64
+		if tmp_int_n128_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 127}, false); err != nil {
+			return utils.WrapError("Decode n128_r17", err)
+		}
+		ie.n128_r17 = tmp_int_n128_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n160_r17:
+		var tmp_int_n160_r17 int64
+		if tmp_int_n160_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 159}, false); err != nil {
+			return utils.WrapError("Decode n160_r17", err)
+		}
+		ie.n160_r17 = tmp_int_n160_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n256_r17:
+		var tmp_int_n256_r17 int64
+		if tmp_int_n256_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 255}, false); err != nil {
+			return utils.WrapError("Decode n256_r17", err)
+		}
+		ie.n256_r17 = tmp_int_n256_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n320_r17:
+		var tmp_int_n320_r17 int64
+		if tmp_int_n320_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 319}, false); err != nil {
+			return utils.WrapError("Decode n320_r17", err)
+		}
+		ie.n320_r17 = tmp_int_n320_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n512_r17:
+		var tmp_int_n512_r17 int64
+		if tmp_int_n512_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 511}, false); err != nil {
+			return utils.WrapError("Decode n512_r17", err)
+		}
+		ie.n512_r17 = tmp_int_n512_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n640_r17:
+		var tmp_int_n640_r17 int64
+		if tmp_int_n640_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 639}, false); err != nil {
+			return utils.WrapError("Decode n640_r17", err)
+		}
+		ie.n640_r17 = tmp_int_n640_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n1280_r17:
+		var tmp_int_n1280_r17 int64
+		if tmp_int_n1280_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 1279}, false); err != nil {
+			return utils.WrapError("Decode n1280_r17", err)
+		}
+		ie.n1280_r17 = tmp_int_n1280_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n2560_r17:
+		var tmp_int_n2560_r17 int64
+		if tmp_int_n2560_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 2559}, false); err != nil {
+			return utils.WrapError("Decode n2560_r17", err)
+		}
+		ie.n2560_r17 = tmp_int_n2560_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n5120_r17:
+		var tmp_int_n5120_r17 int64
+		if tmp_int_n5120_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 5119}, false); err != nil {
+			return utils.WrapError("Decode n5120_r17", err)
+		}
+		ie.n5120_r17 = tmp_int_n5120_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n10240_r17:
+		var tmp_int_n10240_r17 int64
+		if tmp_int_n10240_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 10239}, false); err != nil {
+			return utils.WrapError("Decode n10240_r17", err)
+		}
+		ie.n10240_r17 = tmp_int_n10240_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n20480_r17:
+		var tmp_int_n20480_r17 int64
+		if tmp_int_n20480_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 20479}, false); err != nil {
+			return utils.WrapError("Decode n20480_r17", err)
+		}
+		ie.n20480_r17 = tmp_int_n20480_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n40960_r17:
+		var tmp_int_n40960_r17 int64
+		if tmp_int_n40960_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 40959}, false); err != nil {
+			return utils.WrapError("Decode n40960_r17", err)
+		}
+		ie.n40960_r17 = tmp_int_n40960_r17
+	case NR_DL_PRS_Periodicity_and_ResourceSetSlotOffset_r17_scs120_r17_Choice_n81920_r17:
+		var tmp_int_n81920_r17 int64
+		if tmp_int_n81920_r17, err = r.ReadInteger(&uper.Constraint{Lb: 0, Ub: 81919}, false); err != nil {
+			return utils.WrapError("Decode n81920_r17", err)
+		}
+		ie.n81920_r17 = tmp_int_n81920_r17
+	default:
+		return fmt.Errorf("invalid choice: %d", ie.Choice)
+	}
+	return nil
+}

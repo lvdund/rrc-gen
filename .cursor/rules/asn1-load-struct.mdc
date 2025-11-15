@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+# this is guide to load struct from file asn1 [nr-rrc-17.3.0.asn1](../../asn1/nr-rrc-17.3.0.asn1)
+
+# step 1: [step1-load-struct.md](../../cache/step1-load-struct.md)
+
+# step 2: after done step 1

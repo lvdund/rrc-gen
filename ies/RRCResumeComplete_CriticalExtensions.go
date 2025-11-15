@@ -1,0 +1,57 @@
+package ies
+
+import (
+	"fmt"
+
+	"github.com/lvdund/asn1go/uper"
+	"github.com/lvdund/rrc/utils"
+)
+
+const (
+	RRCResumeComplete_CriticalExtensions_Choice_nothing uint64 = iota
+	RRCResumeComplete_CriticalExtensions_Choice_rrcResumeComplete
+	RRCResumeComplete_CriticalExtensions_Choice_criticalExtensionsFuture
+)
+
+type RRCResumeComplete_CriticalExtensions struct {
+	Choice                   uint64
+	rrcResumeComplete        *RRCResumeComplete_IEs
+	criticalExtensionsFuture interface{} `madatory`
+}
+
+func (ie *RRCResumeComplete_CriticalExtensions) Encode(w *uper.UperWriter) error {
+	var err error
+	if err = w.WriteChoice(ie.Choice, 2, false); err != nil {
+		return err
+	}
+	switch ie.Choice {
+	case RRCResumeComplete_CriticalExtensions_Choice_rrcResumeComplete:
+		if err = ie.rrcResumeComplete.Encode(w); err != nil {
+			err = utils.WrapError("Encode rrcResumeComplete", err)
+		}
+	case RRCResumeComplete_CriticalExtensions_Choice_criticalExtensionsFuture:
+		// interface{} field of choice - nothing to encode
+	default:
+		err = fmt.Errorf("invalid choice: %d", ie.Choice)
+	}
+	return err
+}
+
+func (ie *RRCResumeComplete_CriticalExtensions) Decode(r *uper.UperReader) error {
+	var err error
+	if ie.Choice, err = r.ReadChoice(2, false); err != nil {
+		return err
+	}
+	switch ie.Choice {
+	case RRCResumeComplete_CriticalExtensions_Choice_rrcResumeComplete:
+		ie.rrcResumeComplete = new(RRCResumeComplete_IEs)
+		if err = ie.rrcResumeComplete.Decode(r); err != nil {
+			return utils.WrapError("Decode rrcResumeComplete", err)
+		}
+	case RRCResumeComplete_CriticalExtensions_Choice_criticalExtensionsFuture:
+		// interface{} field of choice - nothing to decode
+	default:
+		return fmt.Errorf("invalid choice: %d", ie.Choice)
+	}
+	return nil
+}

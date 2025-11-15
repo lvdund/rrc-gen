@@ -1,0 +1,34 @@
+package ies
+
+import (
+	"github.com/lvdund/asn1go/uper"
+	"github.com/lvdund/rrc/utils"
+)
+
+const (
+	CellsToAddModExt_v1710_ntn_PolarizationUL_r17_Enum_rhcp   uper.Enumerated = 0
+	CellsToAddModExt_v1710_ntn_PolarizationUL_r17_Enum_lhcp   uper.Enumerated = 1
+	CellsToAddModExt_v1710_ntn_PolarizationUL_r17_Enum_linear uper.Enumerated = 2
+)
+
+type CellsToAddModExt_v1710_ntn_PolarizationUL_r17 struct {
+	Value uper.Enumerated `lb:0,ub:2,madatory`
+}
+
+func (ie *CellsToAddModExt_v1710_ntn_PolarizationUL_r17) Encode(w *uper.UperWriter) error {
+	var err error
+	if err = w.WriteEnumerate(uint64(ie.Value), uper.Constraint{Lb: 0, Ub: 2}, false); err != nil {
+		return utils.WrapError("Encode CellsToAddModExt_v1710_ntn_PolarizationUL_r17", err)
+	}
+	return nil
+}
+
+func (ie *CellsToAddModExt_v1710_ntn_PolarizationUL_r17) Decode(r *uper.UperReader) error {
+	var err error
+	var v uint64
+	if v, err = r.ReadEnumerate(uper.Constraint{Lb: 0, Ub: 2}, false); err != nil {
+		return utils.WrapError("Decode CellsToAddModExt_v1710_ntn_PolarizationUL_r17", err)
+	}
+	ie.Value = uper.Enumerated(v)
+	return nil
+}
